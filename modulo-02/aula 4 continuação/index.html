@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="form-contato">
+         <label for="cep">CEP</label>
+        <input type="text" id="cep" name="cep" pattern="[0-9]{5}-[0-9]{3}" title="formato esperado:
+00000-000">
+        <button type="submit">enviar</button>
+
+         </form>
+
+
+        <script> const formulario = document.querySelector("#form-contato");
+
+            formulario.addEventListener("submit", function (event) {
+                event.preventDefault();
+                alert("mensagem enviada com sucesso!");
+            });
+        </script>
+
+</body>
+
+</html>
