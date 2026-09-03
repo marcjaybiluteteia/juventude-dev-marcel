@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escola Futuro</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      color: #263238;
+      background: #f4f7fb;
+    }
+
+    header {
+      background: #123c69;
+      color: white;
+      padding: 20px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 24px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+    }
+
+    .hero {
+      background: linear-gradient(rgba(18, 60, 105, .8), rgba(18, 60, 105, .8)),
+        url("https://images.unsplash.com/photo-1580582932707-520aed937b7b") center/cover;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .hero h2 {
+      font-size: 38px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 25px;
+    }
+
+    .botao {
+      display: inline-block;
+      background: #f9a825;
+      color: #222;
+      padding: 12px 24px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 55px 8%;
+      text-align: center;
+    }
+
+    section h2 {
+      color: #123c69;
+      margin-bottom: 25px;
+    }
+
+    .cards {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      width: 260px;
+      border-radius: 8px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, .1);
+    }
+
+    .card h3 {
+      color: #123c69;
+      margin-bottom: 10px;
+    }
+
+    #contato {
+      background: #e8f0f8;
+    }
+
+    footer {
+      background: #123c69;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav a {
+        margin: 0 6px;
+      }
+
+      .hero h2 {
+        font-size: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Escola Futuro</h1>
+
+    <nav>
+      <a href="#inicio">Início</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#cursos">Cursos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <h2>Educação que transforma o futuro</h2>
+      <p>Conhecimento, inovação e cuidado para formar grandes cidadãos.</p>
+      <a class="botao" href="#contato">Saiba mais</a>
+    </section>
+
+    <section id="sobre">
+      <h2>Sobre a nossa escola</h2>
+      <p>
+        A Escola Futuro oferece um ambiente acolhedor e moderno,
+        com ensino de qualidade para preparar nossos alunos para os desafios do futuro.
+      </p>
+    </section>
+
+    <section id="cursos">
+      <h2>O que oferecemos</h2>
+
+      <div class="cards">
+        <div class="card">
+          <h3>Ensino Fundamental</h3>
+          <p>Aprendizado completo para o desenvolvimento dos estudantes.</p>
+        </div>
+
+        <div class="card">
+          <h3>Ensino Médio</h3>
+          <p>Preparação para o mercado de trabalho e para a universidade.</p>
+        </div>
+
+        <div class="card">
+          <h3>Atividades Extras</h3>
+          <p>Esportes, tecnologia, música e atividades culturais.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato">
+      <h2>Entre em contato</h2>
+      <p>Email: contato@escolafuturo.com</p>
+      <p>Telefone: (75) 99999-9999</p>
+      <p>Endereço: Cruz das Almas - BA</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Escola Futuro. Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>
