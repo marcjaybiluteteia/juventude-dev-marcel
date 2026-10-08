@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Meu portfólio</title>
+
+  <!-- Bootstrap 5.3.8 — a MESMA versão usada nos slides da aula 19 -->
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+  <!-- Bootstrap Icons 1.13.1 — biblioteca separada, também igual à dos slides -->
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <style>
+    .card img {
+      transition: transform 0.25s ease, filter 0.25s ease;
+    }
+
+    .card img:hover {
+      transform: scale(1.04);
+      filter: brightness(1.1) saturate(1.1);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .card img {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!--
+    POSICIONAMENTO DA PÁGINA
+    container        = largura máxima fixa por breakpoint e centralizada.
+    container-fluid  = ocupa 100% da largura da tela (troque se quiser).
+    py-4             = padding vertical (escala 0 a 5: py-0 = nenhum, py-5 = grande).
+  -->
+  <main class="container py-4">
+
+    <!-- ==========================================================
+         1) CABEÇALHO
+         ========================================================== -->
+    <header class="mb-4">
+      <h1 class="mb-1">sports</h1>
+      <p class="text-body-secondary mb-0">
+        Projetos de estudo construídos com HTML, CSS e Bootstrap.
+      </p>
+    </header>
+
+    <!-- ==========================================================
+         2) ALERT — aviso no fluxo da página
+         alert-info | alert-success | alert-warning | alert-danger
+         A COR não define a urgência: descreva o motivo em palavras.
+         ========================================================== -->
+    <div class="alert alert-info">
+      <strong>Projetos de estudo:</strong> os dados deste portfólio são fictícios.
+      Não envie dados pessoais por esta página.
+    </div>
+
+    <!--
+      VARIAÇÃO (referência): aviso dispensável.
+      alert-dismissible + fade show + botão .btn-close com data-bs-dismiss="alert".
+      O botão precisa de nome acessível (aria-label) — só o "X" não informa nada
+      a quem usa leitor de tela.
+    -->
+    <!--
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      Revise os links antes de compartilhar o portfólio.
+      <button type="button" class="btn-close"
+        data-bs-dismiss="alert" aria-label="Fechar aviso"></button>
+    </div>
+    -->
+
+    <!-- ==========================================================
+         3) DROPDOWN — navegação
+         my-3 = margem vertical. Exige o bootstrap.bundle.min.js (traz o Popper).
+         Todo href precisa de um id que exista no MESMO documento.
+         ========================================================== -->
+    <div class="dropdown my-3">
+      <button class="btn btn-secondary dropdown-toggle" type="button"
+        data-bs-toggle="dropdown" aria-expanded="false">
+        Explorar portfólio
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#conecta">esportes</a></li>
+        <li><a class="dropdown-item" href="#faq">Perguntas frequentes</a></li>
+      </ul>
+    </div>
+
+    <!-- ==========================================================
+         4) CARDS — vitrine responsiva
+         row           = cria a grade (linha).
+         row-cols-1    = 1 card por linha no celular.
+         row-cols-md-3 = 3 cards por linha a partir de 768px.
+         g-4           = espaço entre as colunas (g-0 a g-5).
+         col           = cada card ocupa a fração definida pela row-cols-*.
+         h-100         = mesma altura para todos os cards da linha.
+         ========================================================== -->
+    <section id="projetos" class="my-4">
+      <h2 class="h4 mb-3">Projetos</h2>
+
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+
+        <div class="col">
+          <article class="card h-100">
+            <div class="card-body">
+              <h3 class="card-title h5">Conecta sports</h3>
+              <p class="card-text">melhor site de noticias para amantes do esporte.</p>
+              <a href="#conecta" class="btn btn-primary">Conhecer o sports</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="col">
+          <!-- border-primary colore a borda; card-header/card-footer separam metadados -->
+          <article class="card h-100 border-primary">
+            <div class="card-header">Projeto em andamento</div>
+            <div class="card-body">
+              <h3 class="card-title h5">Agenda cultural</h3>
+              <p class="card-text">Eventos culturais do Recôncavo.</p>
+            </div>
+            <div class="card-footer text-body-secondary">Em desenvolvimento</div>
+          </article>
+        </div>
+
+        <div class="col">
+          <!-- text-bg-dark combina fundo escuro + texto claro em uma só classe -->
+          <article class="card h-100 text-bg-dark">
+            <div class="card-body">
+              <h3 class="card-title h5">Meu bairro</h3>
+              <p class="card-text">Uma página sobre a comunidade.</p>
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         5) VARIAÇÕES DE CARD (referência — pode apagar)
+         card-img-top  = imagem no topo; alt útil, ou alt="" se decorativa.
+         row g-0       = card horizontal (g-0 remove o espaço entre as colunas).
+         row-cols-1 row-cols-lg-2 = empilha no celular e alinha no lg+.
+         ========================================================== -->
+    <section class="my-5">
+      <h2 class="h4 mb-3">Variações de card (referência)</h2>
+
+      <div class="row row-cols-1 row-cols-lg-2 g-4">
+
+        <div class="col">
+          <article class="card h-100">
+            <!-- troque o src pela imagem do seu projeto e escreva um alt útil -->
+            <img src=https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcTuo9TvZf8cZ2KlCunif-UamouQfqTYnouazN3gy7gmBkac_kFHL_MSAMFVyVR_MZLT-tGaKhkllRDavAT2MHGk7uft-7o88EORdwhGt31RfAs9tOxxxUZOwyqIjs08IL4TwFYldVHLWY8&s=19
+              class="card-img-top" alt="bruno henrique é visto tentando elar pelé dentro de si mesmo para obter mais poderes futebolisticos">
+            <div class="card-body">
+              <h3 class="card-title h5">ultimas noticias</h3>
+              <p class="card-text">Bruno henrique é  flagrado tentando selar o poder de pelé para obter seus poderes futebolisticos.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="col">
+          <article class="card h-100">
+            <div class="row g-0">
+              <!-- col-md-4 = 1/3 da largura; col-md-8 = 2/3 -->
+              <div class="col-md-4">
+                <img src="https://placehold.co/400x400/0d6efd/ffffff?text=Img"
+                  class="img-fluid rounded-start h-100 object-fit-cover"
+                  alt="Detalhe do projeto Agenda cultural">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h3 class="card-title h5">Card horizontal</h3>
+                  <p class="card-text">Imagem à esquerda e texto à direita.</p>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         6) AÇÕES COM ÍCONES
+         d-flex + gap-3          = botões lado a lado, com espaço entre eles.
+         flex-column flex-sm-row = empilha no celular e alinha a partir do sm.
+         Com texto visível, o ícone é decorativo: aria-hidden="true".
+         Sem texto, o nome acessível vai no botão: aria-label="...".
+         ========================================================== -->
+    <div class="d-flex flex-column flex-sm-row gap-3 my-4">
+      <button id="salvar" type="button" class="btn btn-success">
+        <i class="bi bi-bookmark" aria-hidden="true"></i>
+        Salvar projeto
+      </button>
+      <button type="button" class="btn btn-success" aria-label="Salvar projeto">
+        <i class="bi bi-bookmark" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <!-- ==========================================================
+         7) DESTINO DO LINK "Projetos" (id="conecta")
+         ========================================================== -->
+    <section id="conecta" class="my-4">
+      <h2 class="h4">Sobre o Conecta</h2>
+      <p class="mb-0">Um projeto de estudo com vagas e cursos fictícios.</p>
+    </section>
+
+    <!-- ==========================================================
+         8) ACCORDION — perguntas frequentes (id="faq")
+         O botão controla um painel:
+           data-bs-target="#resposta1"  ->  id="resposta1"
+           aria-controls="resposta1"    ->  sem o "#"
+         Fechado: .collapsed + aria-expanded="false" + painel sem .show.
+         data-bs-parent="#perguntas" = só um painel aberto por vez.
+         h3 mantém a hierarquia dentro da seção que já tem h2.
+         ========================================================== -->
+    <section id="faq" class="my-5">
+      <h2 class="h4 mb-3">Perguntas frequentes</h2>
+
+      <div class="accordion" id="perguntas">
+
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button"
+              data-bs-toggle="collapse" data-bs-target="#resposta1"
+              aria-expanded="false" aria-controls="resposta1">
+              Como este projeto foi criado?
+            </button>
+          </h3>
+          <div id="resposta1" class="accordion-collapse collapse"
+            data-bs-parent="#perguntas">
+            <div class="accordion-body">Com HTML, CSS e Bootstrap.</div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button"
+              data-bs-toggle="collapse" data-bs-target="#resposta2"
+              aria-expanded="false" aria-controls="resposta2">
+              Quais tecnologias usei?
+            </button>
+          </h3>
+          <div id="resposta2" class="accordion-collapse collapse"
+            data-bs-parent="#perguntas">
+            <div class="accordion-body">HTML, CSS e Bootstrap.</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Scripts no fim do body: encontram o HTML já criado.
+       O bundle já inclui o Popper, necessário para o dropdown. -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
+
+<!--
+  ============================================================
+  GUIA RÁPIDO — POSICIONAMENTO E TAMANHO
+  ============================================================
+  GRADE:       row > col. row-cols-1|2|3|4|6 = quantas colunas por linha.
+  BREAKPOINTS: (sem) <576 | sm >=576 | md >=768 | lg >=992 | xl >=1200 | xxl >=1400
+               ex.: row-cols-1 row-cols-sm-2 row-cols-lg-4
+  COLUNA:      col-12 (tela toda) | col-md-6 (metade) | col-md-4 (1/3)
+  ESPAÇO:      g-0..g-5 entre colunas | m-* = margem | p-* = padding
+               direções: t (topo) b (baixo) s (esq.) e (dir.) x (horiz.) y (vert.)
+  ALINHAR:     d-flex + justify-content-center / align-items-center + gap-2
+  TAMANHO:     w-100 (largura total) | h-100 (altura total) | vh-100 (altura da tela)
+  ESCONDER:    d-none d-md-block (esconde no celular, aparece a partir de md)
+  ÍCONES:      o tamanho do <i class="bi ..."> segue o font-size do elemento
+               use fs-1..fs-6 (ex.: <i class="bi bi-bookmark fs-4">)
+  CORES:       bg-primary / bg-dark, text-bg-dark (fundo + texto),
+               text-body-secondary (texto secundário)
+-->
