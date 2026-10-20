@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cadastro de Produto</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-body-tertiary">
+	<main class="container min-vh-100 d-flex align-items-center justify-content-center py-5">
+		<div class="row justify-content-center w-100">
+			<div class="col-12 col-md-9 col-lg-7 col-xl-6">
+				<!-- Card principal do formulário -->
+				<section class="card border-0 rounded-4 shadow-sm">
+					<div class="card-body p-4 p-md-5">
+						<header class="mb-4">
+							<h1 class="h2 mb-2">Cadastro de Produto</h1>
+							<p class="text-body-secondary mb-0">Preencha os dados abaixo para cadastrar um novo produto.</p>
+						</header>
+
+						<!-- Mensagem exibida após um cadastro demonstrativo -->
+						<div id="mensagem-sucesso" class="alert alert-success d-none" role="status" aria-live="polite">
+							Produto cadastrado com sucesso!
+						</div>
+
+						<!-- Formulário com validação HTML5 e feedback do Bootstrap -->
+						<form id="form-produto" class="needs-validation" novalidate>
+							<div class="mb-3">
+								<label for="nome-produto" class="form-label">Nome do produto</label>
+								<input type="text" class="form-control" id="nome-produto" name="nome-produto" placeholder="Digite o nome do produto" required>
+								<div class="invalid-feedback">Informe o nome do produto.</div>
+							</div>
+
+							<div class="mb-3">
+								<label for="preco" class="form-label">Preço</label>
+								<div class="input-group has-validation">
+									<span class="input-group-text">R$</span>
+									<input type="number" class="form-control" id="preco" name="preco" min="0.01" step="0.01" placeholder="Ex.: 99.90" required>
+									<div class="invalid-feedback">Informe um preço igual ou maior que R$ 0,01.</div>
+								</div>
+							</div>
+
+							<div class="mb-3">
+								<label for="categoria" class="form-label">Categoria</label>
+								<select class="form-select" id="categoria" name="categoria" required>
+									<option value="" selected disabled>Selecione uma categoria</option>
+									<option value="eletronicos">Eletrônicos</option>
+									<option value="informatica">Informática</option>
+									<option value="roupas">Roupas</option>
+									<option value="alimentos">Alimentos</option>
+									<option value="casa-decoracao">Casa e decoração</option>
+									<option value="outros">Outros</option>
+								</select>
+								<div class="invalid-feedback">Selecione uma categoria.</div>
+							</div>
+
+							<div class="mb-4">
+								<label for="descricao" class="form-label">Descrição</label>
+								<textarea class="form-control" id="descricao" name="descricao" rows="4" placeholder="Descreva as características do produto" required></textarea>
+								<div class="invalid-feedback">Informe a descrição do produto.</div>
+							</div>
+
+							<div class="d-flex flex-column flex-sm-row gap-2">
+								<button type="submit" class="btn btn-primary">Cadastrar Produto</button>
+								<button type="reset" class="btn btn-secondary">Limpar</button>
+							</div>
+						</form>
+					</div>
+				</section>
+			</div>
+		</div>
+	</main>
+
+	<script>
+		// Valida os campos antes de exibir a confirmação demonstrativa.
+		const formProduto = document.querySelector("#form-produto");
+		const mensagemSucesso = document.querySelector("#mensagem-sucesso");
+
+		formProduto.addEventListener("submit", (event) => {
+			event.preventDefault();
+			formProduto.classList.add("was-validated");
+
+			if (!formProduto.checkValidity()) {
+				return;
+			}
+
+			formProduto.reset();
+			formProduto.classList.remove("was-validated");
+			mensagemSucesso.classList.remove("d-none");
+		});
+
+		
+		formProduto.addEventListener("reset", () => {
+			formProduto.classList.remove("was-validated");
+			mensagemSucesso.classList.add("d-none");
+		});
+	</script>
+</body>
+</html>
