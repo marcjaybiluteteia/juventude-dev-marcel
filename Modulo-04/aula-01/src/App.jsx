@@ -5,6 +5,7 @@ import viteLogo from './assets/vite.svg'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 import './App.css'
+import Botao from './Botao.jsx'
 
 function App() {
 
@@ -16,16 +17,9 @@ function App() {
       <ul>
      <li>voltar pro curso né pai</li>
      <li>neto é bogodhofe</li>
-       
+     <li><Botao /></li>
 
       </ul>
-
-      
-
-
-     
-
-
 
     </main>
   )
